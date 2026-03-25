@@ -1,5 +1,6 @@
 import app from "./app.js";
 import { sequelize } from "./database/database.js";
+import "./models/Review.js"
 
 async function initi(){
     try{
@@ -11,6 +12,9 @@ async function initi(){
             .catch(err => {
                 console.error("Unable to connect to the database", err);
             });
+
+        await sequelize .sync({ force: true });
+
         app.listen(3000, () => {
             console.log("Server on port 3000")
         });
