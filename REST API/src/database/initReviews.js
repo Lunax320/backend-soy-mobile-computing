@@ -3,191 +3,198 @@ import { Review } from "../models/Review.js";
 const initialReviews = [
     {
         // id: 1,
-        // padre_id: 1, 
-        // usuario_id: 1,
-        // cancion_id: 1,
-        reviewText: "Una obra maestra de la producción moderna. Los sintetizadores crean una atmósfera increíble de principio a fin.",
+        // parentId: 1, 
+        userId: 1,
+        // songId: 1,
+        reviewText: "A masterpiece of modern production. The synthesizers create an incredible atmosphere from start to finish.",
         rating: 5,
         date: "2026-03-24"
     },
     {
         // id: 2,
-        // padre_id: 2,
-        // usuario_id: 2,
-        // cancion_id: 1,
-        reviewText: "La letra tiene un significado muy profundo, aunque el ritmo se vuelve un poco monótono en la segunda mitad.",
+        // parentId: 2,
+        userId: 2,
+        // songId: 1,
+        reviewText: "The lyrics have a very deep meaning, although the rhythm gets a bit monotonous in the second half.",
         rating: 3,
         date: "2026-03-23"
     },
     {
         // id: 3,
-        // padre_id: 3,
-        // usuario_id: 3,
-        // cancion_id: 2,
-        reviewText: "El desempeño vocal del artista en esta pista es espectacular. Definitivamente una de las mejores canciones del álbum.",
+        // parentId: 3,
+        userId: 3,
+        // songId: 2,
+        reviewText: "The artist's vocal performance on this track is spectacular. Definitely one of the best songs on the album.",
         rating: 4,
         date: "2026-03-22"
     },
     {
         // id: 4,
-        // padre_id: null,
-        // usuario_id: 4,
-        // cancion_id: 2,
-        reviewText: "Ritmo sumamente pegajoso y excelente para bailar. La percusión destaca muchísimo.",
+        // parentId: null,
+        userId: 4,
+        // songId: 2,
+        reviewText: "Extremely catchy rhythm and excellent for dancing. The percussion really stands out.",
         rating: 5,
         date: "2026-03-21"
     },
     {
         // id: 5,
-        // padre_id: null,
-        // usuario_id: 1,
-        // cancion_id: 3,
-        reviewText: "La mezcla de sonido es un poco confusa en el coro, los instrumentos opacan la voz principal.",
+        // parentId: null,
+        userId: 1,
+        // songId: 3,
+        reviewText: "The sound mix is a bit confusing in the chorus, the instruments overshadow the main voice.",
         rating: 2,
         date: "2026-03-20"
     },
     {
         // id: 6,
-        // padre_id: null,
-        // usuario_id: 5,
-        // cancion_id: 3,
-        reviewText: "Un clásico instantáneo. La progresión de acordes es simple pero sumamente efectiva.",
+        // parentId: null,
+        userId: 2,
+        // songId: 3,
+        reviewText: "An instant classic. The chord progression is simple but highly effective.",
         rating: 5,
         date: "2026-03-19"
     },
     {
         // id: 7,
-        // padre_id: null,
-        // usuario_id: 2,
-        // cancion_id: 4,
-        reviewText: "Una pista decepcionante. Se siente como si hubieran reciclado ritmos de sus trabajos anteriores.",
+        // parentId: null,
+        userId: 2,
+        // songId: 4,
+        reviewText: "A disappointing track. It feels like they recycled rhythms from their previous work.",
         rating: 2,
         date: "2026-03-18"
     },
     {
         // id: 8,
-        // padre_id: null,
-        // usuario_id: 3,
-        // cancion_id: 4,
-        reviewText: "Excelente colaboración. Los estilos de ambos artistas se complementan a la perfección en esta canción.",
+        // parentId: null,
+        userId: 3,
+        // songId: 4,
+        reviewText: "Excellent collaboration. Both artists' styles complement each other perfectly in this song.",
         rating: 4,
         date: "2026-03-17"
     },
     {
         // id: 9,
-        // padre_id: null,
-        // usuario_id: 6,
-        // cancion_id: 5,
-        reviewText: "Demasiado comercial para el estilo original de la banda. Ha perdido la esencia indie que los caracterizaba.",
+        // parentId: null,
+        userId: 2,
+        // songId: 5,
+        reviewText: "Too commercial for the band's original style. It has lost the indie essence that characterized them.",
         rating: 3,
         date: "2026-03-16"
     },
     {
         // id: 10,
-        // padre_id: null,
-        // usuario_id: 7,
-        // cancion_id: 5,
-        reviewText: "La introducción con guitarra acústica le da un toque nostálgico precioso. Muy recomendada.",
+        // parentId: null,
+        userId: 3,
+        // songId: 5,
+        reviewText: "The acoustic guitar intro gives it a beautiful nostalgic touch. Highly recommended.",
         rating: 4,
         date: "2026-03-15"
     },
     {
         // id: 11,
-        // padre_id: null,
-        // usuario_id: 8,
-        // cancion_id: 6,
-        reviewText: "La línea de bajo de esta pista es increíble, aporta una energía que te mantiene enganchado desde el primer segundo.",
+        // parentId: null,
+        userId: 3,
+        // songId: 6,
+        reviewText: "The bass line on this track is incredible, providing an energy that keeps you hooked from the first second.",
         rating: 5,
         date: "2026-03-14"
     },
     {
         // id: 12,
-        // padre_id: null,
-        // usuario_id: 4,
-        // cancion_id: 6,
-        reviewText: "Una canción ideal para escuchar durante un viaje en carretera. Transmite mucha paz.",
+        // parentId: null,
+        userId: 2,
+        // songId: 6,
+        reviewText: "An ideal song to listen to during a road trip. It transmits a lot of peace.",
         rating: 4,
         date: "2026-03-13"
     },
     {
         // id: 13,
-        // padre_id: null,
-        // usuario_id: 9,
-        // cancion_id: 7,
-        reviewText: "No aporta nada nuevo al género. Es una pista genérica que se olvida fácilmente a los pocos minutos.",
+        // parentId: null,
+        userId: 2,
+        // songId: 7,
+        reviewText: "It brings nothing new to the genre. It is a generic track that is easily forgotten after a few minutes.",
         rating: 1,
         date: "2026-03-12"
     },
     {
         // id: 14,
-        // padre_id: null,
-        // usuario_id: 10,
-        // cancion_id: 7,
-        reviewText: "La transición entre los versos lentos y el estallido del coro es absolutamente sublime.",
+        // parentId: null,
+        userId: 2,
+        // songId: 7,
+        reviewText: "The transition between the slow verses and the explosive chorus is absolutely sublime.",
         rating: 5,
         date: "2026-03-11"
     },
     {
         // id: 15,
-        // padre_id: null,
-        // usuario_id: 5,
-        // cancion_id: 8,
-        reviewText: "Es una buena idea mal ejecutada. Es demasiado larga y se vuelve repetitiva hacia el último minuto.",
+        // parentId: null,
+        userId: 3,
+        // songId: 8,
+        reviewText: "It is a good idea poorly executed. It is too long and becomes repetitive towards the last minute.",
         rating: 3,
         date: "2026-03-10"
     },
     {
         // id: 16,
-        // padre_id: null,
-        // usuario_id: 6,
-        // cancion_id: 8,
-        reviewText: "La percusión tiene influencias latinas muy bien logradas que le dan un aire fresco al álbum.",
+        // parentId: null,
+        userId: 3,
+        // songId: 8,
+        reviewText: "The percussion has very well-achieved Latin influences that give a fresh air to the album.",
         rating: 4,
         date: "2026-03-09"
     },
     {
         // id: 17,
-        // padre_id: null,
-        // usuario_id: 7,
-        // cancion_id: 9,
-        reviewText: "Una balada hermosa y desgarradora. La instrumentación minimalista ayuda a destacar la crudeza de la voz.",
+        // parentId: null,
+        userId: 3,
+        // songId: 9,
+        reviewText: "A beautiful and heartbreaking ballad. The minimalist instrumentation helps highlight the rawness of the voice.",
         rating: 5,
         date: "2026-03-08"
     },
     {
         // id: 18,
-        // padre_id: null,
-        // usuario_id: 8,
-        // cancion_id: 9,
-        reviewText: "El solo de piano que ocurre a la mitad de la pista demuestra el inmenso talento de los músicos de sesión.",
+        // parentId: null,
+        userId: 4,
+        // songId: 9,
+        reviewText: "The piano solo that happens in the middle of the track shows the immense talent of the session musicians.",
         rating: 5,
         date: "2026-03-07"
     },
     {
         // id: 19,
-        // padre_id: null,
-        // usuario_id: 9,
-        // cancion_id: 10,
-        reviewText: "Falta un poco de fuerza en la producción general. Se siente como un demo inacabado.",
+        // parentId: null,
+        userId: 4,
+        // songId: 10,
+        reviewText: "The overall production lacks a bit of punch. It feels like an unfinished demo.",
         rating: 2,
         date: "2026-03-06"
     },
     {
         // id: 20,
-        // padre_id: null,
-        // usuario_id: 10,
-        // cancion_id: 10,
-        reviewText: "La energía y la vibra positiva que transmite esta canción es inigualable. Excelente trabajo de masterización.",
+        // parentId: null,
+        userId: 4,
+        // songId: 10,
+        reviewText: "The energy and positive vibe that this song transmits is unmatched. Excellent mastering work.",
         rating: 5,
         date: "2026-03-05"
     }
 ];
 
 export async function loadInitialReviews() {
-    const count = await Review.count();
 
-    if(count == 0){
-        await Review.bulkCreate(initialReviews);
-        console.log("Initial reviews loaded")
+    try {
+
+        const count = await Review.count();
+
+        if(count == 0){
+            await Review.bulkCreate(initialReviews);
+            console.log("Initial reviews loaded successfully.");
+        }
+
+    } catch (error) {
+        console.log(error)
     }
 }

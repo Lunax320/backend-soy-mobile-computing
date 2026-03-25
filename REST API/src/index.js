@@ -1,7 +1,10 @@
 import app from "./app.js";
 import { sequelize } from "./database/database.js";
 import { loadInitialReviews } from "./database/initReviews.js";
-import "./models/Review.js"
+import { loadInitialUsers } from "./database/initUsers.js";
+import { setupRelations } from "./models/relations.js";
+import "./models/Review.js";
+import "./models/User.js"
 
 async function initi(){
     try{
@@ -16,6 +19,9 @@ async function initi(){
 
         await sequelize .sync({ force: true });
 
+        setupRelations();
+
+        await loadInitialUsers();
         await loadInitialReviews();
 
         app.listen(3000, () => {

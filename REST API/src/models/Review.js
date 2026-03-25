@@ -4,6 +4,14 @@ import { sequelize } from "../database/database.js";
 export const Review = sequelize.define(
     "reviews",
     {
+        userId: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            reference: {
+                model: "user",
+                key: "id"
+            },
+        },
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
