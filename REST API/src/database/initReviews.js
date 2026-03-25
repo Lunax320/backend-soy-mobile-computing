@@ -186,12 +186,12 @@ const initialReviews = [
 export async function loadInitialReviews() {
 
     try {
-
         const count = await Review.count();
-
         if(count == 0){
             await Review.bulkCreate(initialReviews);
             console.log("Initial reviews loaded successfully.");
+        } else {
+            console.log("Initial reviews already loaded.");
         }
 
     } catch (error) {
