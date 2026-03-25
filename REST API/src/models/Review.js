@@ -7,8 +7,8 @@ export const Review = sequelize.define(
         userId: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            reference: {
-                model: "user",
+            references: {
+                model: "users",
                 key: "id"
             },
         },

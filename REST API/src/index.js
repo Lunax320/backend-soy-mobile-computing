@@ -4,7 +4,8 @@ import { loadInitialReviews } from "./database/initReviews.js";
 import { loadInitialUsers } from "./database/initUsers.js";
 import { setupRelations } from "./models/relations.js";
 import "./models/Review.js";
-import "./models/User.js"
+import "./models/User.js";
+import "./models/Follower.js";
 
 async function initi(){
     try{
