@@ -1,6 +1,7 @@
 import { User } from "./User.js";
 import { Review } from "./Review.js";
 import { Follower } from "./Follower.js";
+import { Song } from "./Song.js";
 
 export function setupRelations(){
     User.hasMany(Review, {
@@ -15,6 +16,17 @@ export function setupRelations(){
         as: "user"
     });
 
+    Song.hasMany(Review, {
+        foreignKey: "songId",
+        as: "reviews",
+        onDelete: "cascade",
+        hooks: true
+    });
+
+    Review.belongsTo(Song, {
+        foreignKey: "songId",
+        as: "song"
+    });
 
     User.belongsToMany(User, {
         through: Follower,

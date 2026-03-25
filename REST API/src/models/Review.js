@@ -12,6 +12,14 @@ export const Review = sequelize.define(
                 key: "id"
             },
         },
+        songId: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: "songs",
+                key: "id"
+            },
+        },
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
