@@ -20,9 +20,12 @@ async function initi(){
                 console.error("Unable to connect to the database", err);
             });
 
+
+            setupRelations();
+
         await sequelize .sync({ force: true });
 
-        setupRelations();
+        
 
         await loadInitialUsers();
         await loadInitialSongs();

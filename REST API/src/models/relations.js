@@ -33,13 +33,24 @@ export function setupRelations(){
         as: "following",
         foreignKey: "followerId",
         otherKey: "followingId",
-    })
+    });
 
     User.belongsToMany(User, {
         through: Follower,
         as: "followers",
         foreignKey: "followingId",
         otherKey: "followerId",
-    })
+    });
+    Review.hasMany(Review, {
+        foreignKey: "parentId",
+        as: "replies",
+        onDelete: "cascade",
+        hooks: true
+    });
+
+    Review.belongsTo(Review, {
+        foreignKey: "parentId",
+        as: "parentReview"
+    });
 
 }
