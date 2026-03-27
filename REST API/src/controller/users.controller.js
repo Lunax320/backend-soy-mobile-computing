@@ -1,8 +1,15 @@
 import { User } from "../models/User.js";
 
 export const getUsers = async (req, res) => {
-    const users = await User.findAll();
-    return res.json(users);
+    const { id } = req.params;
+
+    const user = await User.findByPk(id);
+
+    if (!user) {
+        return res.status(404).json({ message: "User not found" });
+    }
+
+    return res.json(user);
 };
 
 //cargar objeto de usuario al request body para crear un nuevo usuario

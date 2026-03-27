@@ -9,11 +9,35 @@ export const getReviews = async (req, res) => {
     }
 };
 
+export const getReviewBySongId = async (req, res) => {
+    try {
+        const id = req.params.id;   
+        const reviews = await Review.findAll({ where: { songId: id } });
+        return res.json(reviews);
+    } catch (error) {
+        return res.status(500).json({ error: error.message });
+    }
+};
+
+
+export const getReviewByUserId = async (req, res) => {
+    try {
+        const id = req.params.id; 
+        const reviews = await Review.findAll({ where: { userId: id } });    
+        return res.json(reviews);   
+    } catch (error) {
+        return res.status(500).json({ error: error.message });
+    }   
+};
+
 export const createReview = async (req, res) => {
+    console.log(req.body);
+
     try {
         const newReview = await Review.create(req.body);
         const parentReviewId = req.body.parentReviewId;
         if (parentReviewId!=null && parentReviewId!=undefined) {
+            console.log("ENTRA EN CREATE REVIEW");
             const parentReview = await Review.findByPk(parentReviewId);
             if (!parentReview) {
                 return res.status(404).json({ error: "Parent review not found" });
