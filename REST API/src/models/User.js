@@ -30,36 +30,9 @@ export const User = sequelize.define(
             type: DataTypes.STRING(50),
             allowNull: false,
         },
-        bio: {
-            type: DataTypes.STRING(160),
-            allowNull: true,
-        },
-        location: {
-            type: DataTypes.STRING(30),
-            allowNull: true,
-        },
-        website: {
-            type: DataTypes.STRING(100),
-            allowNull: true,
-            validate: {
-                isUrl: true,
-            },
-        },
         profileImage: {
             type: DataTypes.STRING,
             allowNull: true,
-        },
-        coverImage: {
-            type: DataTypes.STRING,
-            allowNull: true,
-        },
-        birthDate: {
-            type: DataTypes.DATEONLY,
-            allowNull: true,
-        },
-        verified: {
-            type: DataTypes.BOOLEAN,
-            defaultValue: false,
         },
         followersCount: {
             type: DataTypes.INTEGER,
